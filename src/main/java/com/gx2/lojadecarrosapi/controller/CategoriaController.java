@@ -28,4 +28,8 @@ public class CategoriaController {
     public Categoria post(@RequestBody Categoria categoria) {
         return this.categoriaService.save(categoria);
     }
+
+    @PostMapping List<Categoria> post(@RequestBody List<Categoria> categorias) {
+        return this.categoriaService.save(categorias);
+    }
 }

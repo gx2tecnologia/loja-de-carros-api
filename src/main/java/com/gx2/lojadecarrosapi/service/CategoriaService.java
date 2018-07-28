@@ -21,4 +21,8 @@ public class CategoriaService {
     public Categoria save(Categoria categoria) {
         return this.save(categoria);
     }
+
+    public List<Categoria> save(List<Categoria> categorias) {
+        return this.save(categorias);
+    }
 }
