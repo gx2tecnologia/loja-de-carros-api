@@ -19,7 +19,7 @@ public class ClienteService {
     }
 
     public Cliente findByNome(String nome) {
-        return this.clienteRepository.findByName(nome);
+        return this.clienteRepository.findByNome(nome);
     }
 
     public List<Cliente> findAll() {

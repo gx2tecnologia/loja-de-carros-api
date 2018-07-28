@@ -6,5 +6,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface ClienteRepository extends MongoRepository<Cliente, String> {
     
-    public Cliente findByName(String nome);
+    public Cliente findByNome(String nome);
 }
