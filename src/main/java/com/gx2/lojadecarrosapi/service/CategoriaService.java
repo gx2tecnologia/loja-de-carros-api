@@ -19,10 +19,10 @@ public class CategoriaService {
     } 
 
     public Categoria save(Categoria categoria) {
-        return this.save(categoria);
+        return this.categoriaRepository.save(categoria);
     }
 
-    public List<Categoria> save(List<Categoria> categorias) {
-        return this.save(categorias);
+    public List<Categoria> saveAll(List<Categoria> categorias) {
+        return this.categoriaRepository.saveAll(categorias);
     }
 }

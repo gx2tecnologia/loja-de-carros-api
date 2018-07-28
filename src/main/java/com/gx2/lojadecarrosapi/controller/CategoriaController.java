@@ -19,17 +19,18 @@ public class CategoriaController {
     @Autowired
     private CategoriaService categoriaService;
 
-    @GetMapping
+    @GetMapping()
     public List<Categoria> list() {
         return this.categoriaService.findAll();
     }
 
-    @PostMapping
+    @PostMapping()
     public Categoria post(@RequestBody Categoria categoria) {
         return this.categoriaService.save(categoria);
     }
 
-    @PostMapping List<Categoria> post(@RequestBody List<Categoria> categorias) {
-        return this.categoriaService.save(categorias);
+    @PostMapping(value = "/list")
+    public List<Categoria> postList(@RequestBody List<Categoria> categorias) {
+        return this.categoriaService.saveAll(categorias);
     }
 }
