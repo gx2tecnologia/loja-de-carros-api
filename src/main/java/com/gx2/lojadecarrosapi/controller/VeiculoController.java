@@ -8,6 +8,7 @@ import com.gx2.lojadecarrosapi.service.VeiculoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/veiculo")
 public class VeiculoController {
-    
+
     @Autowired
     private VeiculoService veiculoService;
 
@@ -25,8 +26,9 @@ public class VeiculoController {
         return this.veiculoService.findAll();
     }
 
-    @GetMapping()
-    public Page<Veiculo> findByCategoria(int page, int count, String categoria) {
+    @GetMapping(value = "{page}/{count}/{categoria}")
+    public Page<Veiculo> findByCategoria(@PathVariable("page") int page, @PathVariable("count") int count,
+            @PathVariable("categoria") String categoria) {
         return this.veiculoService.findByCategoria(page, count, categoria);
     }
 
