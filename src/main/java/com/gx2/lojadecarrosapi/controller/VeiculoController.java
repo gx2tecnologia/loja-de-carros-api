@@ -6,6 +6,7 @@ import com.gx2.lojadecarrosapi.entity.Veiculo;
 import com.gx2.lojadecarrosapi.service.VeiculoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,10 +25,13 @@ public class VeiculoController {
         return this.veiculoService.findAll();
     }
 
+    @GetMapping()
+    public Page<Veiculo> findByCategoria(int page, int count, String categoria) {
+        return this.veiculoService.findByCategoria(page, count, categoria);
+    }
+
     @PostMapping()
     public Veiculo post(@RequestBody Veiculo veiculo) {
         return this.veiculoService.save(veiculo);
     }
-
-
 }

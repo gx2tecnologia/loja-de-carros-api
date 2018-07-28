@@ -18,4 +18,7 @@ public class CategoriaService {
         return this.categoriaRepository.findAll();
     } 
 
+    public Categoria save(Categoria categoria) {
+        return this.save(categoria);
+    }
 }
