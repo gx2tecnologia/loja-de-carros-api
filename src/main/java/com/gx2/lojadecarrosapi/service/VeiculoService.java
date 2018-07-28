@@ -20,8 +20,8 @@ public class VeiculoService {
         return this.veiculoRepository.findAll();
     }
 
-    public Page<Veiculo> findByCategoria(int page, int count, String categoriaNome) {
-        return this.veiculoRepository.findByCategoriaNome(categoriaNome, PageRequest.of(page, count));
+    public Page<Veiculo> findByCategoria(int page, int count, String categoriaId) {
+        return this.veiculoRepository.findByCategoriaId(categoriaId, PageRequest.of(page, count));
     }
 
     public Veiculo save(Veiculo veiculo){
