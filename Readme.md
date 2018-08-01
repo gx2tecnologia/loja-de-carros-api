@@ -2,6 +2,8 @@
 
 Spring RestFUL api, Gradle, MongoDB
 
+[![Build Status](https://travis-ci.com/gx2tecnologia/loja-de-carros-api.svg?branch=master)](https://travis-ci.com/gx2tecnologia/loja-de-carros-api)
+
 .\gradlew build -> build the application
 
 .\gradlew bootRun -> run the application
